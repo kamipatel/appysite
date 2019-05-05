@@ -6,7 +6,7 @@
     "title": "Prediction API ",
     "description": "Prediction."
   },
-"host": "https://9of5nfqeed.execute-api.us-west-1.amazonaws.com",
+"host": "9of5nfqeed.execute-api.us-west-1.amazonaws.com",
   "schemes": [
     "https"
   ],
