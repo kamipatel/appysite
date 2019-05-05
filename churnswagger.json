@@ -1,0 +1,80 @@
+{
+  "swagger": "2.0",
+  "basePath": "/dev",
+  "info": {
+    "version": "1.0.0",
+    "title": "Prediction API ",
+    "description": "Prediction."
+  },
+"host": "https://9of5nfqeed.execute-api.us-west-1.amazonaws.com",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/churn": {
+      "get": {
+        "operationId": "getChurn",
+        "summary": "Returns churn",
+        "description": "Churn for criteria",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Prediction",
+            "schema": {
+                "$ref": "#/definitions/PredictionResult"
+            }
+          },
+          "400": {
+            "description": "Getting Prediction when unsuccessful.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "errorCode": {
+                  "type": "integer"
+                },
+                "errorMessage": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+"definitions": {
+     "PredictionResult": {
+      "type": "object",
+      "properties": {
+       "predictionDefinition": {"type": "string"},
+       
+       "predictions":  {
+            "type": "array",
+              "items": {
+                "$ref": "#/definitions/PredictionItem"
+              }
+          }
+      }},
+       "PredictionItem": {
+      "type": "object",
+      "properties": {
+       "status": {"type": "string"},
+        "prediction":  {
+            "type": "object",
+              "items": {
+                "$ref": "#/definitions/Prediction"
+              }
+          }
+      }},
+       "Prediction": {
+      "type": "object",
+      "properties": {
+       "baseLine": {"type": "integer"},
+       "total": {"type": "integer"}
+      }}
+    
+
+  }  
+}
+
+
