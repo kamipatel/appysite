@@ -1,17 +1,17 @@
 {
   "swagger": "2.0",
-  "basePath": "/dev",
   "info": {
-    "version": "1.0.0",
-    "title": "Prediction API ",
-    "description": "Prediction."
+    "version": "1.0",
+    "title": "discovery",
+    "description": "discovery"
   },
-"host": "9of5nfqeed.execute-api.us-west-1.amazonaws.com",
+  "host": "9of5nfqeed.execute-api.us-west-1.amazonaws.com",
+  "basePath": "/dev",
   "schemes": [
     "https"
   ],
   "paths": {
-    "/churn": {
+    "/getChurn": {
       "get": {
         "operationId": "getChurn",
         "summary": "Returns churn",
@@ -19,62 +19,57 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Prediction",
+            "description": "successful operation",
             "schema": {
-                "$ref": "#/definitions/PredictionResult"
+              "$ref": "#/definitions/PredictionResult"
             }
           },
           "400": {
-            "description": "Getting Prediction when unsuccessful.",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "errorCode": {
-                  "type": "integer"
-                },
-                "errorMessage": {
-                  "type": "string"
-                }
-              }
-            }
+            "description": "Invalid status value"
           }
         }
       }
     }
   },
-"definitions": {
-     "PredictionResult": {
+  "definitions": {
+    "PredictionResult": {
       "type": "object",
       "properties": {
-       "predictionDefinition": {"type": "string"},
-       
-       "predictions":  {
-            "type": "array",
-              "items": {
-                "$ref": "#/definitions/PredictionItem"
-              }
+        "predictionDefinition": {
+          "type": "string"
+        },
+        "predictions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PredictionItem"
           }
-      }},
-       "PredictionItem": {
+        }
+      }
+    },
+    "PredictionItem": {
       "type": "object",
       "properties": {
-       "status": {"type": "string"},
-        "prediction":  {
-            "type": "object",
-              "items": {
-                "$ref": "#/definitions/Prediction"
-              }
+        "status": {
+          "type": "string"
+        },
+        "prediction": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/Prediction"
           }
-      }},
-       "Prediction": {
+        }
+      }
+    },
+    "Prediction": {
       "type": "object",
       "properties": {
-       "baseLine": {"type": "integer"},
-       "total": {"type": "integer"}
-      }}
-    
-
-  }  
+        "baseLine": {
+          "type": "integer"
+        },
+        "total": {
+          "type": "integer"
+        }
+      }
+    }
+  }
 }
-
-
