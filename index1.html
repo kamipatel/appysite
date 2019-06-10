@@ -7,7 +7,7 @@
 <body>
   <H2>Welcome to AppyInsuranceDemo LiveAgent!</H2>
 
-  <style type='text/css'>
+<style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #005290;
 		font-family: "Arial", sans-serif;
@@ -42,17 +42,17 @@
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
 		embedded_svc.init(
-			'https://drive-force-6779-dev-ed.cs35.my.salesforce.com',
-			'https://sandbox-drive-force-6779-dev-ed-16b339b82b4.cs35.force.com/',
+			'https://connect-fun-975-dev-ed.cs93.my.salesforce.com',
+			'https://sandbox-connect-fun-975-dev-ed-16b427855e1.cs93.force.com/',
 			gslbBaseURL,
-			'00D2g0000000MvG',
-			'botchat_group',
+			'00D4F000000CsVt',
+			'BotQueueGroup',
 			{
-				baseLiveAgentContentURL: 'https://c.la3-c2cs-ph2.salesforceliveagent.com/content',
-				deploymentId: '5722g0000004Cly',
-				buttonId: '5732g0000004Cnp',
-				baseLiveAgentURL: 'https://d.la3-c2cs-ph2.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'botchat_group',
+				baseLiveAgentContentURL: 'https://c.la2-c1cs-iad.salesforceliveagent.com/content',
+				deploymentId: '5724F0000004CQV',
+				buttonId: '5734F0000004CkW',
+				baseLiveAgentURL: 'https://d.la2-c1cs-iad.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'BotQueueGroup',
 				isOfflineSupportEnabled: false
 			}
 		);
@@ -60,7 +60,7 @@
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://drive-force-6779-dev-ed.cs35.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://connect-fun-975-dev-ed.cs93.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
